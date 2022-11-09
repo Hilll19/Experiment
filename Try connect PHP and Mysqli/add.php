@@ -1,6 +1,6 @@
 <h1>FILM</h1>
 
-<form action="koneksi.php" method="POST"> 
+<form name="submit" method="POST"> 
     <table>
         <tr>
             <td width="130">Name Film</td>
@@ -38,7 +38,7 @@
       if ($data->num_rows) {
         // display item
         while($item = $data -> fetch_assoc()) {
-          echo $item["Name_Film, Genre_Film, Duration_Film, Release_Film"] . ". " . $item["Name_Film, Genre_Film, Duration_Film, Release_Film"] . "<br/>";
+          echo $item["Name_Film, Genre_Film, Duration_Film, Release_Film"] . ". " . "<br/>";
         }
       } else {
         echo "No data";
@@ -46,11 +46,12 @@
   
       // Add Data
       if ($_POST['proses']) {
-        $insertSql = "INSERT INTO film set 
-        Name_Film = '$_POST[Name_Film]', 
-        Genre_Film = '$_POST[Genre_Film]', 
-        Duration_Film = '$_POST[Duration_Film]', 
-        Release_Film = '$_POST[Release_Film]) values (" . "'" . $_POST['proses'] . "'" . ");";
+        //$insertSql = "INSERT INTO film set 
+        //Name_Film = '$_POST[Name_Film]', 
+        //Genre_Film = '$_POST[Genre_Film]', 
+        //Duration_Film = '$_POST[Duration_Film]', 
+        //Release_Film = '$_POST[Release_Film]) values (" . "'" . $_POST['proses'] . "'" . ");";
+	$insertSql = "INSERT INTO film(Name_Film) values ('$_POST[Name_Film]');";
         $result = $conn -> query($insertSql);
         // Refresh page
         header("Refresh:0");
