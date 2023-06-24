@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #87bec3;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #333;
+  margin-right: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  padding-right: 35px;
+  margin-left: 20px;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #dec3c3;
+  padding: 10px;
+}
+
+nav ul ul li {
+  width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #000;
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+article {
+  flex-basis: 73%;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+aside {
+  flex-basis: 25%;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+
+form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-top: 7px;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 4px;
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.profile img {
+  width: 120px;
+  height: auto;
+}
+
+.container-picture {
+  margin-top: 20px;
+}
+
+.picture {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.picture img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Media query */
+/* Media query untuk ukuran layar <= 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  nav ul li:hover > ul {
+    display: none;
+  }
+
+  nav ul ul {
+    top: 0;
+    left: 100%;
+    background-color: #dec3c3;
+    padding: 10px;
+  }
+
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  article {
+    font-size: 13px;
+    flex-basis: 67%;
+    margin-right: 0;
+  }
+
+  aside {
+    font-size: 11px;
+    flex-basis: 10%;
+    margin-left: 0;
+  }
+  form {
+    width: 200px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-top: 7px;
+    font-weight: bold;
+  }
+  
+  textarea {
+    width: 87%;
+    height: 76px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    margin-top: 4px;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .picture {
+    justify-content: space-between;
+  }
+}
+
+/* Media query untuk ukuran layar <= 480px */
+@media (max-width: 480px) {
+  nav ul li {
+    padding: 5px 0;
+  }
+
+  .profile img {
+    width: 80px;
+  }
+
+  .picture img {
+    width: 30px;
+    height: 40px;
+  }
+}
